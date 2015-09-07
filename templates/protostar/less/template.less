@@ -3,6 +3,7 @@
 
 // Core variables and mixins
 @import "variables.less"; // Custom for this template
+@import "template_rtl.less"; // Specific for rtl
 @import "../../../media/jui/less/mixins.less";
 
 // Grid system and page structure
@@ -515,6 +516,13 @@ figcaption {
 	}
 	.well {
 		padding: 10px;
+	}
+}
+@media (max-width: 979px) {
+	.nav-collapse.in.collapse {
+		overflow: visible;
+		height: 0;
+		z-index: 100;
 	}
 }
 @media (min-width: 768px) and (max-width: 979px) {
