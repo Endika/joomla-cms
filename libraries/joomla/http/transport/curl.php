@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  HTTP
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -173,6 +173,12 @@ class JHttpTransportCurl implements JHttpTransport
 			{
 				$options[CURLOPT_PROXYUSERPWD] = $user . ':' . $config->get('proxy_pass');
 			}
+		}
+
+		// Set any custom transport options
+		foreach ($this->options->get('transport.curl', array()) as $key => $value)
+		{
+			$options[$key] = $value;
 		}
 
 		// Set the cURL options.

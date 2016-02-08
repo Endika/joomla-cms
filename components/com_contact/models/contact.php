@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_contact
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -446,7 +446,7 @@ class ContactModelContact extends JModelForm
 
 				if (empty($result))
 				{
-					throw new Exception(JText::_('COM_CONTACT_ERROR_CONTACT_NOT_FOUND'), 404);
+					return false;
 				}
 			}
 			catch (Exception $e)
